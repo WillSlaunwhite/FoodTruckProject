@@ -37,6 +37,7 @@ public class FoodTruckApp {
 		}
 		while (true) {
 			int userChoice;
+			FoodTruck ft = new FoodTruck();
 
 
 			System.out.println("What would you like to do?");
@@ -48,13 +49,15 @@ public class FoodTruckApp {
 			userChoice = sc.nextInt();
 			switch(userChoice) {
 				case(1):
-					System.out.println("1: Print all trucks");
+					ft.listAllTrucks(listOfTrucks);
 					break;
 				case(2):
-					System.out.println("2: See average rating of food trucks");
+//					System.out.println("2: See average rating of food trucks");
+					ft.calcAvgRating(listOfTrucks);
 					break;
 				case(3):
-					System.out.println("3: Display the highest-rated food truck");
+//					System.out.println("3: Display the highest-rated food truck");
+					ft.getBestTruck(listOfTrucks);
 					break;
 				case(4):
 					System.out.println("4: Quit");

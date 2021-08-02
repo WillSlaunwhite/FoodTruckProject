@@ -9,9 +9,9 @@ public class FoodTruck {
 	
 	// no static methods
 	// when object is created, static variable is passed to id then ++.   DONE
-	// UP TO five food trucks
-	// quit out by entering quit
-	// menu after input is done
+	// UP TO five food trucks		DONE
+	// quit out by entering quit	DONE
+	// menu after input is done  	DONE 
 	// option to display all trucks. if input < 5 show correct number of trucks
 	// option to get average 
 	public FoodTruck() {
@@ -52,18 +52,41 @@ public class FoodTruck {
 	public void setRating(double rating) {
 		this.rating = rating;
 	}
+	
+	public void getBestTruck(FoodTruck foodTrucksList[]) {
+		FoodTruck best = new FoodTruck();
+		double highestRating=0;
+		
+		for(FoodTruck ft : foodTrucksList) {
+			if(ft==null) { break; }
+			
+			else if(ft.rating>highestRating) {
+				highestRating = ft.rating;
+				best = ft;
+			} else { continue; }
+		}
+		System.out.println("\nHighest Rated Truck: "+best.name+" \tRating: "+best.rating+"\n");
+	}
+	
+	public void calcAvgRating(FoodTruck foodTrucksList[]) { 
+		double sum=0;
+		int counter=0;
+		for(FoodTruck ft : foodTrucksList) {
+			/// YOU ARE WORKING HERE
+			if(ft==null) { break; }
+			sum+=ft.rating;
+			counter++;
+		} sum/=counter;
+		System.out.println("\nAverage rating: " + sum + "\n");
+	}
 
 	public void listAllTrucks(FoodTruck foodTrucksList[]) {
-		for(int i=0; i<foodTrucksList.length; i++) {
-			FoodTruck truck = foodTrucksList[i];
-			
-			if(truck.getName() == null) {
-				break;
-			}
+		for(FoodTruck ft : foodTrucksList) {
+			if(ft == null) { break; }
 			else {
-				System.out.println("Food Truck Name: "+truck.getName()+
-					"Food Truck Type: "+truck.getType()+
-					"Rating: "+truck.getRating());
+				System.out.println("Food Truck Name: "+ft.name+"\n"+
+					"Food Truck Type: "+ft.type+"\n"+
+					"Rating: "+ft.rating+"\n");
 			}
 			
 		}
