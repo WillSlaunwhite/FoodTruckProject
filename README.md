@@ -4,6 +4,8 @@
 Currently just a shell for a food truck class with a constructor that gives a name, 
 food type, rating, and unique id passed from a static 
 
+got carried away and added a bit more before the first commit, 
+
 ### Technologies Used
 
 ### Lessons Learned
@@ -12,4 +14,5 @@ food type, rating, and unique id passed from a static
 unsure at this point if I should be declaring the length of the array I'll be storing 
 the objects in or if i should just declare it as obj[] arr = {};
 
-
+I also have rating initialized as a string instead of a double in case the user
+wants to quit out on case 1, but this feels like it's probably wrong
