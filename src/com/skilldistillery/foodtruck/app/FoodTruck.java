@@ -6,14 +6,6 @@ public class FoodTruck {
 	private double rating;
 	private int id;
 
-	
-	// no static methods
-	// when object is created, static variable is passed to id then ++.   DONE
-	// UP TO five food trucks		DONE
-	// quit out by entering quit	DONE
-	// menu after input is done  	DONE 
-	// option to display all trucks. if input < 5 show correct number of trucks
-	// option to get average 
 	public FoodTruck() {
 		this.id = foodTruckCounter;
 		foodTruckCounter++;
@@ -72,17 +64,19 @@ public class FoodTruck {
 		double sum=0;
 		int counter=0;
 		for(FoodTruck ft : foodTrucksList) {
-			/// YOU ARE WORKING HERE
-			if(ft==null) { break; }
+			if(ft==null) { break; } 
+			
 			sum+=ft.rating;
 			counter++;
-		} sum/=counter;
-		System.out.println("\nAverage rating: " + sum + "\n");
+		} 
+		sum/=counter;
+		System.out.println("\nAverage rating of all trucks: " + sum + "\n");
 	}
 
 	public void listAllTrucks(FoodTruck foodTrucksList[]) {
 		for(FoodTruck ft : foodTrucksList) {
 			if(ft == null) { break; }
+			
 			else {
 				System.out.println("Food Truck Name: "+ft.name+"\n"+
 					"Food Truck Type: "+ft.type+"\n"+
